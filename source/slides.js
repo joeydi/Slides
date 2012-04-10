@@ -836,6 +836,21 @@
 				to = next ? (this.current + 1) : (prev ? this.current - 1 : this.current);
 			}
 
+			if ( to < 0 ) {
+				// If goto is less then 0
+				next_slide = this.total - 1;
+			} else  if ( to > (this.total - 1)) {
+				// If goto is greater then total slides
+				next_slide = 0;
+			} else {
+				next_slide = to;
+			}
+
+			var direction = next == true ? 1 : -1;
+
+			// Pass slide from number
+			this._trigger("navigateStart", ( [this.current, next_slide, direction] ), this);
+
 			// Pass slide from number
 			this._trigger("navigateStart", ( this.current + 1 ), this);
 			
