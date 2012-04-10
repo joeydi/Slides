@@ -851,9 +851,6 @@
 			// Pass slide from number
 			this._trigger("navigateStart", ( [this.current, next_slide, direction] ), this);
 
-			// Pass slide from number
-			this._trigger("navigateStart", ( this.current + 1 ), this);
-			
 			// creat the loop
 			if ( to == this.slides.length && !pagination ) {
 				// last slide, loop to first
